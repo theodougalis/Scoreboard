@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="15dp"
+    android:layout_height="200dp">
+
+    <TextView
+        android:id="@+id/cellGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/cellTeamNameA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team name A"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/cellScoreA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score A"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/cellTeamNameB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team name B"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/cellScoreB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score B"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/cellDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+
+
+
+</LinearLayout>
