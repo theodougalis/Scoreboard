@@ -47,21 +47,26 @@
         android:id="@+id/btnEditScores"
         android:layout_width="200dp"
         android:layout_height="60dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Submit New Scores"
+        android:text="@string/submitScores"
+        android:textAllCaps="false"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="@+id/edtScore2"
-        app:layout_constraintStart_toStartOf="@+id/edtScore1" />
+        app:layout_constraintStart_toStartOf="@+id/edtScore1"
+        app:layout_constraintTop_toBottomOf="@+id/txtHint" />
 
     <Button
         android:id="@+id/btnFinish"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Finish Game"
+        android:text="@string/finishGame"
+        android:textAllCaps="false"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/txtScoreboard"
         app:layout_constraintEnd_toEndOf="@+id/btnEditScores"
         app:layout_constraintStart_toStartOf="@+id/btnEditScores"
         app:layout_constraintTop_toBottomOf="@+id/btnEditScores" />
@@ -98,7 +103,7 @@
         android:backgroundTint="@android:color/holo_green_light"
         android:digits="0123456789-"
         android:ems="10"
-        android:hint="Edit Score:"
+        android:hint="@string/editScore"
         android:inputType="numberSigned"
         android:textColor="@android:color/holo_green_light"
         android:textColorHint="@android:color/holo_green_light"
@@ -116,7 +121,7 @@
         android:backgroundTint="@android:color/holo_green_light"
         android:digits="0123456789-"
         android:ems="10"
-        android:hint="Edit Score:"
+        android:hint="@string/editScore"
         android:inputType="numberSigned"
         android:textColor="@android:color/holo_green_light"
         android:textColorHint="@android:color/holo_green_light"
@@ -131,13 +136,6 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
-
     <TextView
         android:id="@+id/txtScoreboard"
         android:layout_width="match_parent"
@@ -145,7 +143,7 @@
         android:background="@android:color/holo_green_light"
         android:fontFamily="@font/fruktur"
         android:gravity="center"
-        android:text="ScoreBoard"
+        android:text="@string/appName"
         android:textColor="@android:color/black"
         android:textSize="60sp"
         android:textStyle="bold|italic"
@@ -157,10 +155,10 @@
         android:id="@+id/txtHint"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Insert the value to be added to each team's score (negative number if it needs to be subtracted)."
+        android:text="@string/hint"
         android:textColor="@android:color/holo_green_light"
-        app:layout_constraintBottom_toTopOf="@+id/btnEditScores"
         app:layout_constraintEnd_toEndOf="@+id/edtScore2"
         app:layout_constraintStart_toStartOf="@+id/edtScore1"
         app:layout_constraintTop_toBottomOf="@+id/edtScore1" />

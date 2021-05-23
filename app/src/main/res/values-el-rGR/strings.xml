@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">ScoreBoard</string>
+    <string name="newGame">Νέα Παρτίδα:</string>
+    <string name="teamA">Όνομα Α Ομάδας:</string>
+    <string name="hintA">Ομάδα Α</string>
+    <string name="teamB">Όνομα Β Ομάδας:</string>
+    <string name="hintB">Ομάδα Β</string>
+    <string name="gameTitle">Τίτλος Παιχνιδιού:</string>
+    <string name="hintTitle">Παιχνίδι</string>
+    <string name="start">Εκκίνηση Παιχνιδιού</string>
+    <string name="oldGames">Δες Παλιές Παρτίδες</string>
+    <string name="license">Αυτή η εφαρμογή δημιουργήθηκε από προπτυχιακούς φοιτητές του τμήματος Πληροφορικής του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης ως εργασία για μάθημα.</string>
+    <string name="logo">Το λογότυπο του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης.</string>
+    <string name="editScore">Επεξεργασία σκορ:</string>
+    <string name="submitScores">Υποβολή αλλαγών</string>
+    <string name="finishGame">Τέλος Παιχνιδιού</string>
+    <string name="hint">Εισάγετε την τιμή που πρέπει να προστεθεί στο σκορ κάθε ομάδας (με αρνητικό πρόσημο άμα πρέπει να αφαιρεθεί).</string>
+</resources>

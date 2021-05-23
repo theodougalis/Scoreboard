@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Scoreboard</string>
+    <string name="appName" translatable="false">ScoreBoard</string>
+    <string name="newGame">Create a new game:</string>
+    <string name="teamA">Name of Team A:</string>
+    <string name="hintA">Team A</string>
+    <string name="teamB">Name of Team B:</string>
+    <string name="hintB">Team B</string>
+    <string name="gameTitle">Title of the Game:</string>
+    <string name="hintTitle">Game</string>
+    <string name="start">Start Game</string>
+    <string name="oldGames">Show Old Games</string>
+    <string name="license">This app was made by undergraduate students of the Computer Science Department of Aristotle University of Thessaloniki as a project for a course.</string>
+    <string name="logo">The Logo of Aristotle University of Thessaloniki.</string>
+    <string name="editScore">Edit Score:</string>
+    <string name="submitScores">Submit New Scores</string>
+    <string name="finishGame">Finish Game</string>
+    <string name="hint">Insert the value to be added to the score of each team (negative number if it needs to be subtracted).</string>
+
 </resources>
