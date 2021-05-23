@@ -3,6 +3,7 @@ package com.example.scoreboard;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ConstraintLayout parent;
     private TextView txtTitleWarning, txtANameWarning, txtBNameWarning;
     private EditText edtTeamAName, edtTeamBName, edtGameTitle;
     private Button btnStart, btnOldGames;
@@ -25,15 +25,28 @@ public class MainActivity extends AppCompatActivity {
 
         initializeViews();
 
-        //TODO these methods
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (checkInputs()){
+                resetWarnings();
+                if (checkInputs()) {
 
                     resetWarnings();
-                    startingSnackbar();
+                    btnStart.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Intent intent = new Intent(MainActivity.this, ActiveGameActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("edtGameTitle", edtGameTitle.getText().toString());
+                            bundle.putString("edtTeamAName", edtTeamAName.getText().toString());
+                            bundle.putString("edtTeamBName", edtTeamBName.getText().toString());
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    });
+
                 }
             }
         });
@@ -46,44 +59,40 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void startingSnackbar(){
-        
-    }
 
-    private void resetWarnings(){
+    private void resetWarnings() {
         txtTitleWarning.setVisibility(View.GONE);
         txtANameWarning.setVisibility(View.GONE);
         txtBNameWarning.setVisibility(View.GONE);
     }
 
-    private boolean checkInputs(){
+    private boolean checkInputs() {
 
-        if (edtGameTitle.getText().toString().equals("")){
+        if (edtGameTitle.getText().toString().equals("")) {
             txtTitleWarning.setVisibility(View.VISIBLE);
             txtTitleWarning.setText("Game title needed!");
             return false;
         }
 
-        if (edtTeamAName.getText().toString().equals("")){
+        if (edtTeamAName.getText().toString().equals("")) {
             txtANameWarning.setVisibility(View.VISIBLE);
             txtANameWarning.setText("Team A name needed!");
             return false;
         }
-        if (edtTeamBName.getText().toString().equals("")){
+        if (edtTeamBName.getText().toString().equals("")) {
             txtBNameWarning.setVisibility(View.VISIBLE);
             txtBNameWarning.setText("Team B name needed!");
             return false;
         }
-        if (edtTeamBName.getText().toString().equals(edtTeamAName.getText().toString())){
+        if (edtTeamBName.getText().toString().equals(edtTeamAName.getText().toString())) {
+            txtBNameWarning.setVisibility(View.VISIBLE);
             txtBNameWarning.setText("Teams can't have the same name!");
             return false;
         }
         return true;
     }
 
-    private void initializeViews(){
-
-        parent = findViewById(R.id.parent);
+    private void initializeViews() {
 
         txtTitleWarning = findViewById(R.id.txtTitleWarning);
         txtANameWarning = findViewById(R.id.txtANameWarning);
