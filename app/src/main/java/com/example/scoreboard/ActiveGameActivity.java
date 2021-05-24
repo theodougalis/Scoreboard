@@ -26,6 +26,7 @@ public class ActiveGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_active_game);
 
+        //Getting the user's inputs from Main Activity to this one
         Bundle bundle = getIntent().getExtras();
         initializeViews();
         txtTitle.setText(bundle.getString("edtGameTitle"));
@@ -38,7 +39,7 @@ public class ActiveGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editScores();
-                //Hides the keyboard
+                //Hide the keyboard
                 InputMethodManager inputManager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
@@ -56,7 +57,7 @@ public class ActiveGameActivity extends AppCompatActivity {
     }
 
 
-
+    //Warn the user that he is about to save the game and save it if he presses Save and Exit, go back to main activity
     private void finishSnackbar(){
         Snackbar.make(parent2 , "This game will be saved to be shown only and not editable.", Snackbar.LENGTH_INDEFINITE)
                 .setAction("Save and Exit", new View.OnClickListener() {
@@ -67,15 +68,17 @@ public class ActiveGameActivity extends AppCompatActivity {
                 }).show();
     }
 
+    //Edit scores if the input is valid
     private void editScores(){
 
-        //If statements check that "-" only exists as a first character of an input and inputs are not empty or "-" alone.
+        //Make sure that if "-" exists in input, it's only once and the first character
         if (edtScore1.getText().toString().lastIndexOf("-")!=edtScore1.getText().toString().indexOf("-") || (edtScore1.getText().toString().lastIndexOf("-")==edtScore1.getText().toString().indexOf("-") && edtScore1.getText().toString().indexOf("-")!=0 && edtScore1.getText().toString().indexOf("-")!=-1)){
             edtScore1.setText("");
         }
         if (edtScore2.getText().toString().lastIndexOf("-")!=edtScore2.getText().toString().indexOf("-") || (edtScore2.getText().toString().lastIndexOf("-")==edtScore2.getText().toString().indexOf("-") && edtScore2.getText().toString().indexOf("-")!=0 && edtScore2.getText().toString().indexOf("-")!=-1)){
             edtScore2.setText("");
         }
+        //Make sure tha input is not blank or just "-"
         if (!edtScore1.getText().toString().equals("") && !edtScore1.getText().toString().equals("-")){
             score1+=Integer.parseInt(edtScore1.getText().toString());
             txtScore1.setText(String.valueOf(score1));
@@ -88,6 +91,7 @@ public class ActiveGameActivity extends AppCompatActivity {
         edtScore2.setText("");
     }
 
+    //Initialize all the views needed
     private void initializeViews(){
 
         parent2 = findViewById(R.id.parent2);

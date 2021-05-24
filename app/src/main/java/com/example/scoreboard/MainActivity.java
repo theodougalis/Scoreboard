@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
+                            //Get user's inputs and transfer them to the Active Game Activity
                             Intent intent = new Intent(MainActivity.this, ActiveGameActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("edtGameTitle", edtGameTitle.getText().toString());
@@ -60,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    //Make the warnings for invalid inputs disappear
     private void resetWarnings(){
         txtTitleWarning.setVisibility(View.GONE);
         txtANameWarning.setVisibility(View.GONE);
         txtBNameWarning.setVisibility(View.GONE);
     }
 
+    //Check that game title and team names are not blank and teams have different names and return true, otherwise false
     private boolean checkInputs(){
-
         if (edtGameTitle.getText().toString().equals("")){
             txtTitleWarning.setVisibility(View.VISIBLE);
             txtTitleWarning.setText("Game title needed!");
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //Initialize all the views needed
     private void initializeViews(){
 
         txtTitleWarning = findViewById(R.id.txtTitleWarning);
